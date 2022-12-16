@@ -53,10 +53,11 @@ def time_function(f):
         return result
     return wrapper
 
+
 @time_function
 def break_the_password(password):
-    for number in range(10**8):
-        for length in range(4, 8):
+    for length in range(4, 8):
+        for number in range(10 ** 8):
             test_password = str(number).zfill(length)
             if test_password == password:
                 return test_password
