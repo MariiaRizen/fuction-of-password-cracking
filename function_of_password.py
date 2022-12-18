@@ -43,6 +43,7 @@ def generate_password():
     password = ''.join(symbols_list)
     return password
 
+
 def time_function(f):
     @wraps(f)
     def wrapper(*args, **kwargs):
@@ -57,7 +58,7 @@ def time_function(f):
 @time_function
 def break_the_password(password):
     for length in range(4, 8):
-        for number in range(10 ** 8):
+        for number in range(length):
             test_password = str(number).zfill(length)
             if test_password == password:
                 return test_password
